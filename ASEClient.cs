@@ -34,6 +34,47 @@ namespace ADONetHelper.ASE
     /// <seealso cref="DbClient"/>
     public class ASEClient : DbClient
     {
+        #region Events
+        /// <summary>
+        /// An event that is triggered for any message or warning sent by the database
+        /// </summary>
+        /// <remarks>
+        /// In order to respond to warnings and messages from the database, the client should create an <see cref="AseInfoMessageEventHandler" /> delegate to listen to this event.
+        /// </remarks>
+        public event AseInfoMessageEventHandler InfoMessage
+        {
+            add
+            {
+                //Get an exclusive lock first
+                lock (this.Connection)
+                {
+                    this.Connection.InfoMessage += value;
+                }
+            }
+            remove
+            {
+                //Get an exclusive lock first
+                lock (this.Connection)
+                {
+                    this.Connection.InfoMessage -= value;
+                }
+            }
+        }
+        #endregion
+        #region Fields/Properties
+        /// <summary>
+        /// An instance of <see cref="AseConnection"/> to use to connect to an ASE database
+        /// </summary>
+        /// <returns></returns>
+        protected AseConnection Connection
+        {
+            get
+            {
+                //Return this back to the caller
+                return (AseConnection)this.ExecuteSQL.Connection;
+            }
+        }
+        #endregion
         #region Constructors
         /// <summary>
         /// Insantiates a new instance of <see cref="ASEClient"/> using the passed in <paramref name="connectionString"/> And <paramref name="queryCommandType"/>
