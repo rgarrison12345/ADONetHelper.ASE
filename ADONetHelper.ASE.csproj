@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.1;</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.0;netstandard2.0;net46</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://github.com/rgarrison12345/ADONetHelper.ASE/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/rgarrison12345/ADONetHelper.ASE</PackageProjectUrl>
     <RepositoryUrl>https://github.com/rgarrison12345/ADONetHelper.ASE.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Version>1.0.8</Version>
+    <Version>1.0.9</Version>
     <PackageTags>SYBASE ASE SAP AseClient ORM ADO.NET ADO SQL .NET Database RDBMS Generic DAL ANSI</PackageTags>
     <Copyright>Copyright © Robert Garrison 2018</Copyright>
     <Authors>Robert Garrison</Authors>
@@ -16,7 +16,7 @@
     <Title>ADONetHelper.ASE</Title>
     <PackageId>ADONetHelper.ASE</PackageId>
     <Description>Extends ADONetHelper library to ASE</Description>
-    <PackageReleaseNotes>Updating to ADONetHelper 3.1.2</PackageReleaseNotes>
+    <PackageReleaseNotes>Updating to AdoNetCore.AseClient 0.13.0, adding .Net Framework 4.6, .Net Standard 2.0, .Net Core 2.0 builds</PackageReleaseNotes>
     <AssemblyName>ADONetHelper.ASE</AssemblyName>
     <RootNamespace>ADONetHelper.ASE</RootNamespace>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\ADONetHelper.ASE.xml</DocumentationFile>
@@ -27,8 +27,9 @@
 	<Platforms>x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AdoNetCore.AseClient" Version="0.11.0" />
+    <PackageReference Include="AdoNetCore.AseClient" Version="0.13.0" />
     <None Include="LICENSE.md" Pack="true" PackagePath="LICENSE.md" />
+    <None Include="README.md" Pack="true" PackagePath="README.md" />
 	<PackageReference Include="ADONetHelper" version="3.1.2" />
   </ItemGroup>
       <PropertyGroup Condition="'$(Configuration)'=='Debug'">
