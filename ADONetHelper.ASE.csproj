@@ -7,7 +7,7 @@
     <RepositoryUrl>https://github.com/rgarrison12345/ADONetHelper.ASE.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Version>1.0.9</Version>
+    <Version>1.1.0</Version>
     <PackageTags>SYBASE ASE SAP AseClient ORM ADO.NET ADO SQL .NET Database RDBMS Generic DAL ANSI</PackageTags>
     <Copyright>Copyright © Robert Garrison 2018</Copyright>
     <Authors>Robert Garrison</Authors>
@@ -16,7 +16,7 @@
     <Title>ADONetHelper.ASE</Title>
     <PackageId>ADONetHelper.ASE</PackageId>
     <Description>Extends ADONetHelper library to ASE</Description>
-    <PackageReleaseNotes>Updating to AdoNetCore.AseClient 0.13.0, adding .Net Framework 4.6, .Net Standard 2.0, .Net Core 2.0 builds</PackageReleaseNotes>
+    <PackageReleaseNotes>Updating to ADONetHelper 3.1.3, Updating to AdoNetCore.AseClient 0.13.1</PackageReleaseNotes>
     <AssemblyName>ADONetHelper.ASE</AssemblyName>
     <RootNamespace>ADONetHelper.ASE</RootNamespace>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\ADONetHelper.ASE.xml</DocumentationFile>
@@ -24,26 +24,25 @@
     <DefineConstants>TRACE;</DefineConstants>
     <Prefer32Bit>false</Prefer32Bit>
     <OutputType>Library</OutputType>
-	<Platforms>x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AdoNetCore.AseClient" Version="0.13.0" />
+    <PackageReference Include="AdoNetCore.AseClient" Version="0.13.1" />
+    <PackageReference Include="ADONetHelper" version="3.1.3" />
     <None Include="LICENSE.md" Pack="true" PackagePath="LICENSE.md" />
     <None Include="README.md" Pack="true" PackagePath="README.md" />
-	<PackageReference Include="ADONetHelper" version="3.1.2" />
   </ItemGroup>
-      <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>.\bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;</DefineConstants>
-      </PropertyGroup>
-      <PropertyGroup Condition="'$(Configuration)'=='Release'">
-        <DebugSymbols>false</DebugSymbols>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>.\bin\Release\</OutputPath>
-        <DefineConstants>RELEASE;</DefineConstants>
-      </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>RELEASE;</DefineConstants>
+  </PropertyGroup>
 </Project>
