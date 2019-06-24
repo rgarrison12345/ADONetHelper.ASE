@@ -101,7 +101,7 @@ namespace ADONetHelper.ASE
         /// <summary>
         /// Insantiates a new instance of <see cref="ASEClient"/> using the passed in <paramref name="connection" />
         /// </summary>
-        /// <param name="connection">An instance of <see cref="AseConnection"/> to use to query a database </param>
+        /// <param name="connection">An instance of <see cref="AseConnection"/> to use to query a database</param>
         public ASEClient(AseConnection connection) : base(connection)
         {       
         }
