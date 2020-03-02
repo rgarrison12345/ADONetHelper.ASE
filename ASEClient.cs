@@ -1,6 +1,6 @@
 ﻿#region Licenses
 /*MIT License
-Copyright(c) 2018
+Copyright(c) 2020
 Robert Garrison
 
 Permission Is hereby granted, free Of charge, To any person obtaining a copy
@@ -23,6 +23,7 @@ SOFTWARE*/
 #endregion
 #region Using Statements
 using AdoNetCore.AseClient;
+using ADONetHelper.Core;
 using System.Data;
 #endregion
 
@@ -46,17 +47,17 @@ namespace ADONetHelper.ASE
             add
             {
                 //Get an exclusive lock first
-                lock (this.Connection)
+                lock (Connection)
                 {
-                    this.Connection.InfoMessage += value;
+                    Connection.InfoMessage += value;
                 }
             }
             remove
             {
                 //Get an exclusive lock first
-                lock (this.Connection)
+                lock (Connection)
                 {
-                    this.Connection.InfoMessage -= value;
+                    Connection.InfoMessage -= value;
                 }
             }
         }
@@ -71,7 +72,7 @@ namespace ADONetHelper.ASE
             get
             {
                 //Return this back to the caller
-                return (AseConnection)this.ExecuteSQL.Connection;
+                return (AseConnection)ExecuteSQL.Connection;
             }
         }
         #endregion
@@ -111,6 +112,14 @@ namespace ADONetHelper.ASE
         /// <param name="connectionString">Connection string to use to query a database</param>
         /// <param name="factory">An instance of <see cref="IDbObjectFactory"/></param>
         public ASEClient(string connectionString, IDbObjectFactory factory) : base(connectionString, factory)
+        {
+        }
+        /// <summary>
+        /// Constructor to query a database using an existing <see cref="AseConnection"/> to initialize the <paramref name="connection"/>
+        /// </summary>
+        /// <param name="connection">An instance of <see cref="AseConnection"/> to use to query a database </param>
+        /// <param name="commandType">Represents how a command should be interpreted by the data provider</param>
+        public ASEClient(AseConnection connection, CommandType commandType) : base(connection, commandType)
         {
         }
         #endregion
