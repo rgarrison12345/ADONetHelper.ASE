@@ -15,7 +15,7 @@
     <Title>ADONetHelper.ASE</Title>
     <PackageId>ADONetHelper.ASE</PackageId>
     <Description>Extends ADONetHelper library to ASE</Description>
-    <PackageReleaseNotes>Updating to AdoNetCore.AseClient 0.16.0 and ADONetHelper 4.0.9.  Removing .net 4.6 build</PackageReleaseNotes>
+    <PackageReleaseNotes>Updating to AdoNetCore.AseClient 0.17.0 and ADONetHelper 4.0.9.  Removing .net 4.6 build</PackageReleaseNotes>
     <AssemblyName>ADONetHelper.ASE</AssemblyName>
     <RootNamespace>ADONetHelper.ASE</RootNamespace>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\ADONetHelper.ASE.xml</DocumentationFile>
